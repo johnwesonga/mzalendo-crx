@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Mzalendo",
+  "description": "Mzalendo extension highlights and loads Kenya politician bio data when moused over.",
+  "version": "1.1",
+
+  "permissions": [
+    "http://mzalendo.com/*",
+    "storage"
+  ],
+  
+	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["styles.css", "tipped.css"],
+      "js": ["jquery-1.9.1.js", "jquery-highlight1.js", "spinners.min.js", "tipped.js", "names.js", "script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "web_accessible_resources": [
+    "Helvetica.otf",
+    "Raleway-ExtraBold.ttf",
+    "Raleway-Regular.ttf",
+    "Raleway-Bold.ttf",
+    "NotoSans-Bold.ttf",
+    "HelveticaNeue-Bold.otf",
+    "HelveticaNeue-Light.otf"
+  ],
+  
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" }
+}
